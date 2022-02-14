@@ -5,12 +5,13 @@ const portalImage = document.querySelector("#portal-image");
 
 portalImageDiv.addEventListener("click", function () {
   runAnimation();
-  setTimeout(() => enterSite(), 1100);
+  setTimeout(() => enterSite(), 1900);
 });
 
 function runAnimation() {
   portalImage.src = "./images/portal.gif";
-  setTimeout(() => portalImageDiv.remove(), 1100);
+  header.setAttribute("style", "color:rgb(16, 16, 20)");
+  setTimeout(() => portalImageDiv.remove(), 1250);
 }
 
 function enterSite() {
@@ -21,5 +22,5 @@ function enterSite() {
   headerDiv.prepend(imageHeader);
   header.innerText =
     "idk what yall wanna put here but we should put something here i think";
-  //   portalImageDiv.remove();
+  setTimeout(() => header.setAttribute("style", "color:turquoise"), 100);
 }
