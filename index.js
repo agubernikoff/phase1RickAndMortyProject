@@ -22,12 +22,11 @@ function runAnimation() {
 
 function enterSite() {
   imageHeader = document.createElement("img");
-  imageHeader.src = "./images/title.png";
+  imageHeader.src = "./images/title2.png";
   imageHeader.alt = "Rick and Morty Title";
   imageHeader.id = "imageHeader";
   headerDiv.prepend(imageHeader);
-  header.innerText =
-    "idk what yall wanna put here but we should put something here i think";
+  header.remove();
   setTimeout(() => header.setAttribute("style", "color:turquoise"), 100);
   setTimeout(() => fetchCharacters(), 100);
   setTimeout(() => {
@@ -36,7 +35,7 @@ function enterSite() {
     charListDiv.append(charListUl);
   }, 100);
   body.id = "body2";
-  renderSearchBar();
+  setTimeout(() => renderSearchBar(), 100);
   search();
 }
 
