@@ -4,6 +4,7 @@ const portalImageDiv = document.querySelector("#portalImageDiv");
 const portalImage = document.querySelector("#portal-image");
 const charListDiv = document.querySelector("#char-list-div");
 const body = document.querySelector("body");
+const charactersArray = [];
 
 portalImageDiv.addEventListener("click", function () {
   runAnimation();
@@ -36,6 +37,7 @@ function enterSite() {
   }, 100);
   body.id = "body2";
   renderSearchBar();
+  search();
 }
 
 function fetchCharacters() {
@@ -43,12 +45,13 @@ function fetchCharacters() {
     fetch(`https://rickandmortyapi.com/api/character/?page=${i}`)
       .then((resp) => resp.json())
       .then((data) => {
-        renderCharacters(data);
+        renderCharactersList(data);
+        populateCharactersArray(data);
       });
   }
 }
 
-function renderCharacters(data) {
+function renderCharactersList(data) {
   const charList = document.querySelector("#char-list");
   data.results.forEach((char) => {
     const charLi = document.createElement("li");
@@ -61,20 +64,19 @@ function renderCharacters(data) {
 function renderSearchBar() {
   const searchWrapper = document.createElement("div");
   searchWrapper.id = "searchWrapper";
-  const searchBar = document.createElement("form");
-  searchBar.id = "searchBarForm";
-  const searchBarInput = document.createElement("input");
-  searchBarInput.type = "text";
-  searchBarInput.name = "searchBar";
-  searchBarInput.id = "searchBar";
-  searchBarInput.placeholder = "search for a character";
-  searchBttn = document.createElement("button");
+  const searchForm = document.createElement("form");
+  searchForm.id = "searchBarForm";
+  const searchBar = document.createElement("input");
+  searchBar.type = "text";
+  searchBar.name = "searchBar";
+  searchBar.id = "searchBar";
+  searchBar.placeholder = "search for a character";
+  const searchBttn = document.createElement("button");
   searchBttn.innerText = "Find that character, broh";
   searchBttn.type = "submit";
   body.append(searchWrapper);
-  searchWrapper.append(searchBar);
-  searchBar.append(searchBarInput, searchBttn);
-  console.log(searchWrapper);
+  searchWrapper.append(searchForm);
+  searchForm.append(searchBar, searchBttn);
   // searchBarForm.addEventListener("submit", () {
   //   searchRes = document.querySelector("#searchBar").value
   //   if (searchRes.value === char.name)
@@ -83,4 +85,22 @@ function renderSearchBar() {
   //   return ("alert", "Can/'t find that character broh!")
   //   searchRes.reset();
   //})
+}
+
+function populateCharactersArray(data) {
+  data.results.forEach((char) => charactersArray.push(char.name));
+}
+
+function search() {
+  form = document.querySelector("#searchBarForm");
+  input = document.querySelector("#searchBar");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    charactersArray.forEach((char) => {
+      if (input.value === char) {
+        console.log(char);
+      }
+    });
+    form.reset();
+  });
 }
