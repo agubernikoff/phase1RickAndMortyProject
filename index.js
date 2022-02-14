@@ -9,7 +9,10 @@ portalImageDiv.addEventListener("click", function () {
   runAnimation();
   setTimeout(() => enterSite(), 1900);
 });
-
+//const audio = new Audio("file name");
+//document.onclick = function() {
+//  audio.play()
+//}
 function runAnimation() {
   portalImage.src = "./images/portal.gif";
   header.setAttribute("style", "color:rgb(16, 16, 20)");
@@ -39,7 +42,7 @@ function fetchCharacters() {
   for (let i = 1; i <= 42; i++) {
     fetch(`https://rickandmortyapi.com/api/character/?page=${i}`)
       .then((resp) => resp.json())
-      .then((data) => renderCharacters(data));
+      .then((data) =>  {renderCharacters(data); renderSearchBar(data)});
   }
 }
 
@@ -70,12 +73,14 @@ function renderSearchBar() {
   searchWrapper.append(searchBar);
   searchBar.append(searchBarInput, searchBttn);
   console.log(searchWrapper);
+  // searchBarForm.addEventListener("submit", () {
+  //   searchRes = document.querySelector("#searchBar").value
+  //   if (searchRes.value === char.name)
+  //   return X.append(searchRes.value);
+  //   else (searchRes.value !== char.name)
+  //   return ("alert", "Can/'t find that character broh!")
+  //   searchRes.reset();
+  //})
+  
 }
 
-// searchBarForm.addEventListener("submit", () {
-//   searchRes = document.querySelector("#searchBar").value
-//   if (searchRes.value === char.name)
-//   return X.append(searchRes.value);
-//   else (searchRes.value !== char.name)
-//   return ("alert", "Can/'t find that character broh!")
-// })
