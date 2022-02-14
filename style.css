@@ -1,5 +1,8 @@
-body {
+#body {
   background-color: rgb(16, 16, 20);
+}
+#body2 {
+  background-image: url("https://i.pinimg.com/originals/e2/fb/0b/e2fb0b2ac9b7e82275eacc8c2ee9c846.jpg");
 }
 h1 {
   color: turquoise;
@@ -22,6 +25,7 @@ div {
 }
 #char-list {
   color: turquoise;
+  background-color: black;
   height: 200px;
   width: 18%;
   overflow: hidden;

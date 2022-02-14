@@ -3,7 +3,7 @@ const header = document.querySelector("h1");
 const portalImageDiv = document.querySelector("#portalImageDiv");
 const portalImage = document.querySelector("#portal-image");
 const charListDiv = document.querySelector("#char-list-div");
-const backgroundImg = document.querySelector("body");
+const body = document.querySelector("body");
 
 portalImageDiv.addEventListener("click", function () {
   runAnimation();
@@ -17,8 +17,6 @@ function runAnimation() {
 }
 
 function enterSite() {
-  backgroundImg.setAttribute("style", "background-image:")
-  backgroundImg.style.backgroundColor.remove();
   imageHeader = document.createElement("img");
   imageHeader.src = "./images/title.png";
   imageHeader.alt = "Rick and Morty Title";
@@ -33,6 +31,8 @@ function enterSite() {
     charListUl.id = "char-list";
     charListDiv.append(charListUl);
   }, 100);
+  body.id = "body2";
+  renderSearchBar();
 }
 
 function fetchCharacters() {
@@ -53,3 +53,21 @@ function renderCharacters(data) {
   });
 }
 
+function renderSearchBar() {
+  const searchWrapper = document.createElement("div");
+  searchWrapper.id = "searchWrapper";
+  const searchBar = document.createElement("form");
+  searchBar.id = "searchBarForm";
+  const searchBarInput = document.createElement("input");
+  searchBarInput.type = "text";
+  searchBarInput.name = "searchBar";
+  searchBarInput.id = "searchBar";
+  searchBarInput.placeholder = "search for a character";
+  searchBttn = document.createElement("button");
+  searchBttn.innerText = "Find that character, broh";
+  searchBttn.type = "submit";
+  body.append(searchWrapper);
+  searchWrapper.append(searchBar);
+  searchBar.append(searchBarInput, searchBttn);
+  console.log(searchWrapper);
+}
