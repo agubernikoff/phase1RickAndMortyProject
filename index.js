@@ -2,6 +2,7 @@ const headerDiv = document.querySelector("#headerDiv");
 const header = document.querySelector("h1");
 const portalImageDiv = document.querySelector("#portalImageDiv");
 const portalImage = document.querySelector("#portal-image");
+const charList = document.querySelector("#char-list");
 
 portalImageDiv.addEventListener("click", function () {
   runAnimation();
@@ -23,4 +24,22 @@ function enterSite() {
   header.innerText =
     "idk what yall wanna put here but we should put something here i think";
   setTimeout(() => header.setAttribute("style", "color:turquoise"), 100);
+  setTimeout(() => fetchCharacters(), 100);
+}
+
+function fetchCharacters() {
+  for (let i = 1; i <= 42; i++) {
+    fetch(`https://rickandmortyapi.com/api/character/?page=${i}`)
+      .then((resp) => resp.json())
+      .then((data) => renderCharacters(data));
+  }
+}
+
+function renderCharacters(data) {
+  data.results.forEach((char) => {
+    const charLi = document.createElement("li");
+    charLi.innerText = char.name;
+    charLi.id = char.id;
+    charList.append(charLi);
+  });
 }

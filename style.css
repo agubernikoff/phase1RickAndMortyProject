@@ -20,3 +20,10 @@ h1 {
 div {
   transition: 500ms;
 }
+#char-list {
+  color: turquoise;
+  height: 200px;
+  width: 18%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
