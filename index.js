@@ -12,7 +12,7 @@ portalImageDiv.addEventListener("click", function () {
 //const audio = new Audio("file name");
 //document.onclick = function() {
 //  audio.play()
-}
+//}
 function runAnimation() {
   portalImage.src = "./images/portal.gif";
   header.setAttribute("style", "color:rgb(16, 16, 20)");
