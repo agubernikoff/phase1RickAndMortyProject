@@ -3,6 +3,7 @@ const header = document.querySelector("h1");
 const portalImageDiv = document.querySelector("#portalImageDiv");
 const portalImage = document.querySelector("#portal-image");
 const charListDiv = document.querySelector("#char-list-div");
+const backgroundImg = document.querySelector("body");
 
 portalImageDiv.addEventListener("click", function () {
   runAnimation();
@@ -16,6 +17,8 @@ function runAnimation() {
 }
 
 function enterSite() {
+  backgroundImg.setAttribute("style", "background-image:")
+  backgroundImg.style.backgroundColor.remove();
   imageHeader = document.createElement("img");
   imageHeader.src = "./images/title.png";
   imageHeader.alt = "Rick and Morty Title";
@@ -49,3 +52,4 @@ function renderCharacters(data) {
     charList.append(charLi);
   });
 }
+
