@@ -71,3 +71,11 @@ function renderSearchBar() {
   searchBar.append(searchBarInput, searchBttn);
   console.log(searchWrapper);
 }
+
+// searchBarForm.addEventListener("submit", () {
+//   searchRes = document.querySelector("#searchBar").value
+//   if (searchRes.value === char.name)
+//   return X.append(searchRes.value);
+//   else (searchRes.value !== char.name)
+//   return ("alert", "Can/'t find that character broh!")
+// })
