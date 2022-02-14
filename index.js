@@ -42,7 +42,9 @@ function fetchCharacters() {
   for (let i = 1; i <= 42; i++) {
     fetch(`https://rickandmortyapi.com/api/character/?page=${i}`)
       .then((resp) => resp.json())
-      .then((data) =>  {renderCharacters(data); renderSearchBar(data)});
+      .then((data) => {
+        renderCharacters(data);
+      });
   }
 }
 
@@ -81,6 +83,4 @@ function renderSearchBar() {
   //   return ("alert", "Can/'t find that character broh!")
   //   searchRes.reset();
   //})
-  
 }
-
