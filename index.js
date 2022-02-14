@@ -2,7 +2,7 @@ const headerDiv = document.querySelector("#headerDiv");
 const header = document.querySelector("h1");
 const portalImageDiv = document.querySelector("#portalImageDiv");
 const portalImage = document.querySelector("#portal-image");
-const charList = document.querySelector("#char-list");
+const charListDiv = document.querySelector("#char-list-div");
 
 portalImageDiv.addEventListener("click", function () {
   runAnimation();
@@ -25,6 +25,11 @@ function enterSite() {
     "idk what yall wanna put here but we should put something here i think";
   setTimeout(() => header.setAttribute("style", "color:turquoise"), 100);
   setTimeout(() => fetchCharacters(), 100);
+  setTimeout(() => {
+    const charListUl = document.createElement("ul");
+    charListUl.id = "char-list";
+    charListDiv.append(charListUl);
+  }, 100);
 }
 
 function fetchCharacters() {
@@ -36,6 +41,7 @@ function fetchCharacters() {
 }
 
 function renderCharacters(data) {
+  const charList = document.querySelector("#char-list");
   data.results.forEach((char) => {
     const charLi = document.createElement("li");
     charLi.innerText = char.name;
