@@ -16,7 +16,7 @@ function runAnimation() {
 
 function enterSite() {
   imageHeader = document.createElement("img");
-  imageHeader.src = "./images/title.jpg";
+  imageHeader.src = "./images/title.png";
   imageHeader.alt = "Rick and Morty Title";
   imageHeader.id = "imageHeader";
   headerDiv.prepend(imageHeader);
