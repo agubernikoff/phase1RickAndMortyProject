@@ -134,8 +134,22 @@ function renderCharacter(char) {
       .then((resp) => resp.json())
       .then((data) => renderEpisode(data));
   });
+  const deleteBttn = document.createElement("button");
+  deleteBttn.className = "delete-bttn";
+  deleteBttn.textContent = "X";
+  deleteBttn.addEventListener("click", function() {
+    characterDiv.remove();
+  })
+  const likeBttn = document.createElement("button")
+  likeBttn.className = "like-bttn";
+  likeBttn.textContent = "♡";
+  likeBttn.addEventListener("click", function () {
+    likeBttn.textContent = "♥"
+    
+  })
 
   characterDiv.append(
+    deleteBttn,
     name,
     image,
     species,
