@@ -102,6 +102,7 @@ function search() {
         console.log(name);
         const image = document.createElement("img");
         image.src = char.image;
+        image.alt = char.name;
         console.log(image);
         const species = document.createElement("h2");
         species.innerText = char.species;
