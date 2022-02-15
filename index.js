@@ -32,9 +32,15 @@ function enterSite() {
   setTimeout(() => header.setAttribute("style", "color:turquoise"), 100);
   setTimeout(() => fetchCharacters(), 100);
   setTimeout(() => {
+    const faves = document.createElement("h3");
+    faves.innerText = "FAVORITES";
+    const favesUl = document.createElement("ul");
+    favesUl.id = "faves-list";
     const charListUl = document.createElement("ul");
     charListUl.id = "char-list";
-    charListDiv.append(charListUl);
+    const charactersTitle = document.createElement("h3");
+    charactersTitle.innerText = "CHARACTERS";
+    charListDiv.append(faves, favesUl, charactersTitle, charListUl);
   }, 110);
   setTimeout(() => renderSearchBar(), 100);
   setTimeout(() => search(), 101);
@@ -56,6 +62,7 @@ function renderCharactersList(data) {
   data.results.forEach((char) => {
     const charLi = document.createElement("li");
     charLi.innerText = char.name;
+    charLi.id = char.id;
     charLi.className = "clickableChar";
     charList.append(charLi);
     charLi.addEventListener("click", function () {
@@ -136,17 +143,19 @@ function renderCharacter(char) {
   const deleteBttn = document.createElement("button");
   deleteBttn.className = "delete-bttn";
   deleteBttn.textContent = "X";
-  deleteBttn.addEventListener("click", function() {
+  deleteBttn.addEventListener("click", function () {
     characterDiv.remove();
-  })
-  const likeBttn = document.createElement("button")
+  });
+  const addToFaves = document.createElement("h4");
+  addToFaves.innerText = `ADD TO FAVORITES, BROH: `;
+  const likeBttn = document.createElement("button");
   likeBttn.className = "like-bttn";
   likeBttn.textContent = "♡";
   likeBttn.addEventListener("click", function () {
-    likeBttn.textContent = "♥"
-    
-  })
-
+    likeBttn.textContent = "♥";
+    addtoFavorites(char);
+  });
+  addToFaves.append(likeBttn);
   characterDiv.append(
     deleteBttn,
     name,
@@ -157,7 +166,8 @@ function renderCharacter(char) {
     gender,
     origin,
     location,
-    episodes
+    episodes,
+    addToFaves
   );
   bigCharactersDiv.append(characterDiv);
 }
@@ -172,4 +182,13 @@ function renderEpisode(episodes) {
   epiCode.innerText = `Season and Episode: ${episodes.episode}`;
   epiInfo.append(epiName, epiAirDate, epiCode);
   //   console.log(epiInfo);
+}
+
+function addtoFavorites(char) {
+  charInCharList = document.getElementById(`${char.id}`);
+  console.log(charInCharList);
+  const favesList = document.querySelector("#faves-list");
+  console.log(favesList);
+  charInCharList.remove();
+  favesList.append(charInCharList);
 }
