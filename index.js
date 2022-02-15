@@ -93,51 +93,57 @@ function search() {
     e.preventDefault();
     charactersArray.forEach((char) => {
       if (input.value.toUpperCase() === char.name.toUpperCase()) {
-        const characterDiv = document.createElement("div");
-        characterDiv.className = "characterDiv";
-        console.log(characterDiv);
-        const name = document.createElement("h1");
-        name.innerText = char.name;
-        const image = document.createElement("img");
-        image.src = char.image;
-        image.alt = char.name;
-        image.className = "characterImage";
-        const species = document.createElement("h4");
-        species.innerText = `Species: ${char.species}`;
-        const type = document.createElement("h4");
-        type.innerText = `Type: ${char.type}`;
-        const status = document.createElement("h4");
-        status.innerText = `Status: ${char.status}`;
-        const gender = document.createElement("h4");
-        gender.innerText = `Gender: ${char.gender}`;
-        const origin = document.createElement("h4");
-        origin.innerText = `Origin: ${char.origin.name}`;
-        const location = document.createElement("h4");
-        location.innerText = `Location: ${char.location.name}`;
-        const episodes = document.createElement("h4");
-        //episodes.innerText = renderEpisode;
-        char.episode.forEach((epi) => {
-          fetch(`${epi}`)
-            .then((resp) => resp.json())
-            .then((data) => renderEpisode(data));
-        });
-
-        characterDiv.append(
-          name,
-          image,
-          species,
-          type,
-          status,
-          gender,
-          origin,
-          location,
-          episodes
-        );
-        bigCharactersDiv.append(characterDiv);
+        renderCharacter(char);
       }
     });
     form.reset();
   });
+}
+
+function renderCharacter(char) {
+  const form = document.querySelector("#searchBarForm");
+  const input = document.querySelector("#searchBar");
+  const characterDiv = document.createElement("div");
+  characterDiv.className = "characterDiv";
+  console.log(characterDiv);
+  const name = document.createElement("h1");
+  name.innerText = char.name;
+  const image = document.createElement("img");
+  image.src = char.image;
+  image.alt = char.name;
+  image.className = "characterImage";
+  const species = document.createElement("h4");
+  species.innerText = `Species: ${char.species}`;
+  const type = document.createElement("h4");
+  type.innerText = `Type: ${char.type}`;
+  const status = document.createElement("h4");
+  status.innerText = `Status: ${char.status}`;
+  const gender = document.createElement("h4");
+  gender.innerText = `Gender: ${char.gender}`;
+  const origin = document.createElement("h4");
+  origin.innerText = `Origin: ${char.origin.name}`;
+  const location = document.createElement("h4");
+  location.innerText = `Location: ${char.location.name}`;
+  const episodes = document.createElement("h4");
+  //episodes.innerText = renderEpisode;
+  char.episode.forEach((epi) => {
+    fetch(`${epi}`)
+      .then((resp) => resp.json())
+      .then((data) => renderEpisode(data));
+  });
+
+  characterDiv.append(
+    name,
+    image,
+    species,
+    type,
+    status,
+    gender,
+    origin,
+    location,
+    episodes
+  );
+  bigCharactersDiv.append(characterDiv);
 }
 
 function renderEpisode(episodes) {
