@@ -10,6 +10,19 @@ portalImageDiv.addEventListener("click", function () {
   runAnimation();
   setTimeout(() => enterSite(), 1900);
 });
+const myAudio = new Audio('audio/Rick-and-Morty-Theme-Song.mp3'); 
+if (typeof myAudio.loop == 'boolean')
+{
+    myAudio.loop = true;
+}
+else
+{
+    myAudio.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+}
+myAudio.play();
 const audio = new Audio("./audio/LETS GO - AUDIO FROM JAYUZUMI.COM.mp3");
 document.onclick = function () {
   audio.play();
