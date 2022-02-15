@@ -61,9 +61,16 @@ div {
   border-color: turquoise;
   background-color: black;
   width: 400px;
+  text-align: center;
 }
-.characterDiv h1,
-h2 {
+.characterDiv h1 {
+  color: turquoise;
+  text-align: center;
+}
+.characterImage {
+  width: 50%;
+}
+.characterDiv h4 {
   color: turquoise;
   text-align: center;
 }

@@ -93,36 +93,28 @@ function search() {
     e.preventDefault();
     charactersArray.forEach((char) => {
       if (input.value.toUpperCase() === char.name.toUpperCase()) {
-        console.log(char);
         const characterDiv = document.createElement("div");
         characterDiv.className = "characterDiv";
         console.log(characterDiv);
         const name = document.createElement("h1");
         name.innerText = char.name;
-        console.log(name);
         const image = document.createElement("img");
         image.src = char.image;
         image.alt = char.name;
-        console.log(image);
-        const species = document.createElement("h2");
-        species.innerText = char.species;
-        console.log(species);
-        const type = document.createElement("h2");
-        type.innerText = char.type;
-        console.log(type);
-        const status = document.createElement("h2");
-        status.innerText = char.status;
-        console.log(status);
-        const gender = document.createElement("h2");
-        gender.innerText = char.gender;
-        console.log(gender);
-        const origin = document.createElement("h2");
-        origin.innerText = char.origin.name;
-        console.log(origin);
-        const location = document.createElement("h2");
-        location.innerText = char.location.name;
-        console.log(location);
-        const episodes = document.createElement("h2");
+        image.className = "characterImage";
+        const species = document.createElement("h4");
+        species.innerText = `Species: ${char.species}`;
+        const type = document.createElement("h4");
+        type.innerText = `Type: ${char.type}`;
+        const status = document.createElement("h4");
+        status.innerText = `Status: ${char.status}`;
+        const gender = document.createElement("h4");
+        gender.innerText = `Gender: ${char.gender}`;
+        const origin = document.createElement("h4");
+        origin.innerText = `Origin: ${char.origin.name}`;
+        const location = document.createElement("h4");
+        location.innerText = `Location: ${char.location.name}`;
+        const episodes = document.createElement("h4");
         //episodes.innerText = renderEpisode;
         char.episode.forEach((epi) => {
           fetch(`${epi}`)
