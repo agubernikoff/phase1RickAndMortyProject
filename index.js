@@ -56,11 +56,11 @@ function renderCharactersList(data) {
   data.results.forEach((char) => {
     const charLi = document.createElement("li");
     charLi.innerText = char.name;
-    charLi.id = char.id;
+    charLi.className = "clickableChar";
     charList.append(charLi);
-    charLi.addEventListener("click", function() {
-      return renderCharacter(char)
-    })
+    charLi.addEventListener("click", function () {
+      return renderCharacter(char);
+    });
   });
 }
 
@@ -104,6 +104,7 @@ function search() {
 }
 
 function renderCharacter(char) {
+  console.log(char);
   const characterDiv = document.createElement("div");
   characterDiv.className = "characterDiv";
   console.log(characterDiv);
@@ -157,5 +158,4 @@ function renderEpisode(episodes) {
   epiCode.innerText = `Season and Episode: ${episodes.episode}`;
   epiInfo.append(epiName, epiAirDate, epiCode);
   //   console.log(epiInfo);
-
 }
