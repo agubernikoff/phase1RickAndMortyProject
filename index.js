@@ -10,10 +10,10 @@ portalImageDiv.addEventListener("click", function () {
   runAnimation();
   setTimeout(() => enterSite(), 1900);
 });
-// const audio = new Audio("./audio/LETS GO - AUDIO FROM JAYUZUMI.COM.mp3");
-// document.onclick = function () {
-//   audio.play();
-// };
+const audio = new Audio("./audio/LETS GO - AUDIO FROM JAYUZUMI.COM.mp3");
+document.onclick = function () {
+  audio.play();
+};
 
 function runAnimation() {
   portalImage.src = "./images/portal.gif";
@@ -58,6 +58,9 @@ function renderCharactersList(data) {
     charLi.innerText = char.name;
     charLi.id = char.id;
     charList.append(charLi);
+    charLi.addEventListener("click", function() {
+      return renderCharacter(char)
+    })
   });
 }
 
@@ -154,4 +157,5 @@ function renderEpisode(episodes) {
   epiCode.innerText = `Season and Episode: ${episodes.episode}`;
   epiInfo.append(epiName, epiAirDate, epiCode);
   //   console.log(epiInfo);
+
 }
