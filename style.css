@@ -74,3 +74,7 @@ div {
   color: turquoise;
   text-align: center;
 }
+.clickableChar:hover {
+  font-size: 105%;
+  text-decoration: underline;
+}
