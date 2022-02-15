@@ -74,18 +74,21 @@ function renderCharactersList(data) {
 function renderSearchBar() {
   const searchWrapper = document.createElement("div");
   searchWrapper.id = "searchWrapper";
+  const searchHeader = document.createElement("h2");
+  searchHeader.innerText = "Search for a character:";
+  searchHeader.id = "searchHead";
   const searchForm = document.createElement("form");
   searchForm.id = "searchBarForm";
   const searchBar = document.createElement("input");
   searchBar.type = "text";
   searchBar.name = "searchBar";
   searchBar.id = "searchBar";
-  searchBar.placeholder = "search for a character";
+  searchBar.placeholder = "show me what you got!";
   const searchBttn = document.createElement("button");
   searchBttn.innerText = "Find that character, broh";
   searchBttn.type = "submit";
-  body.append(searchWrapper);
-  searchWrapper.append(searchForm);
+  charListDiv.prepend(searchWrapper);
+  searchWrapper.append(searchHeader, searchForm);
   searchForm.append(searchBar, searchBttn);
 }
 
@@ -96,7 +99,7 @@ function populateCharactersArray(data) {
 function search() {
   const bigCharactersDiv = document.createElement("div");
   bigCharactersDiv.id = "bigCharactersDiv";
-  body.append(bigCharactersDiv);
+  charListDiv.append(bigCharactersDiv);
   const form = document.querySelector("#searchBarForm");
   const input = document.querySelector("#searchBar");
   form.addEventListener("submit", (e) => {

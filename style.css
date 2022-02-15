@@ -36,6 +36,7 @@ div {
   color: black;
   background-color: turquoise;
   width: 22%;
+  height: auto;
   text-align: center;
 }
 *::-webkit-scrollbar {
@@ -55,10 +56,25 @@ div {
   display: block;
   text-align: center;
 }
+#searchHead {
+  text-align: center;
+  color: black;
+  background-color: turquoise;
+  width: 18%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
 #searchBarForm {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+#searchBar {
+  margin: 15px;
+  width: 200px;
 }
 .characterDiv {
   display: block;
@@ -67,8 +83,9 @@ div {
   border-width: 10px;
   border-color: turquoise;
   background-color: black;
-  width: 400px;
+  width: 300px;
   text-align: center;
+  margin: 10px;
 }
 .characterDiv h1 {
   color: turquoise;
@@ -84,4 +101,13 @@ div {
 .clickableChar:hover {
   font-size: 105%;
   text-decoration: underline;
+  cursor: pointer;
+}
+#bigCharactersDiv {
+  position: absolute;
+  left: 333px;
+}
+.delete-bttn {
+  position: relative;
+  left: 138px;
 }
