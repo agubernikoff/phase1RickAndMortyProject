@@ -7,13 +7,11 @@ const body = document.querySelector("body");
 const charactersArray = [];
 
 portalImageDiv.addEventListener("click", function () {
+  const audio = new Audio("./audio/LETS GO - AUDIO FROM JAYUZUMI.COM.mp3");
+  audio.play();
   runAnimation();
   setTimeout(() => enterSite(), 1900);
 });
-const audio = new Audio("./audio/LETS GO - AUDIO FROM JAYUZUMI.COM.mp3");
-document.onclick = function () {
-  audio.play();
-};
 
 function runAnimation() {
   portalImage.src = "./images/portal.gif";
@@ -104,6 +102,8 @@ function search() {
   const input = document.querySelector("#searchBar");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    const audio1 = new Audio("audio/SHOW ME WHAT YOU GOT - AUDIO FROM JAYUZUMI.COM.mp3");
+    audio1.play();
     charactersArray.forEach((char) => {
       if (input.value.toUpperCase() === char.name.toUpperCase()) {
         renderCharacter(char);
