@@ -102,7 +102,9 @@ function search() {
   const input = document.querySelector("#searchBar");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const audio1 = new Audio("audio/SHOW ME WHAT YOU GOT - AUDIO FROM JAYUZUMI.COM.mp3");
+    const audio1 = new Audio(
+      "audio/SHOW ME WHAT YOU GOT - AUDIO FROM JAYUZUMI.COM.mp3"
+    );
     audio1.play();
     charactersArray.forEach((char) => {
       if (input.value.toUpperCase() === char.name.toUpperCase()) {
