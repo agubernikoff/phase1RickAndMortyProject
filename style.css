@@ -23,13 +23,20 @@
 div {
   transition: 500ms;
 }
-#char-list {
+#char-list,
+#faves-list {
   color: turquoise;
   background-color: black;
   height: 200px;
   width: 18%;
   overflow: hidden;
   overflow-y: scroll;
+}
+#char-list-div h3 {
+  color: black;
+  background-color: turquoise;
+  width: 22%;
+  text-align: center;
 }
 *::-webkit-scrollbar {
   width: 12px;

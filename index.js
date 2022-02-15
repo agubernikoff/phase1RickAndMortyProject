@@ -33,13 +33,13 @@ function enterSite() {
   setTimeout(() => fetchCharacters(), 100);
   setTimeout(() => {
     const faves = document.createElement("h3");
-    faves.innerText = "FAVORITES";
+    faves.innerText = `OOOOOWEEEEE!\nIT'S MY FAVORITE CHARACTERS`;
     const favesUl = document.createElement("ul");
     favesUl.id = "faves-list";
     const charListUl = document.createElement("ul");
     charListUl.id = "char-list";
     const charactersTitle = document.createElement("h3");
-    charactersTitle.innerText = "CHARACTERS";
+    charactersTitle.innerText = "AW GEEZ\n THE REST OF THE CHARACTERS";
     charListDiv.append(faves, favesUl, charactersTitle, charListUl);
   }, 110);
   setTimeout(() => renderSearchBar(), 100);
