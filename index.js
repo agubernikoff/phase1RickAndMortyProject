@@ -101,8 +101,6 @@ function search() {
 }
 
 function renderCharacter(char) {
-  const form = document.querySelector("#searchBarForm");
-  const input = document.querySelector("#searchBar");
   const characterDiv = document.createElement("div");
   characterDiv.className = "characterDiv";
   console.log(characterDiv);
