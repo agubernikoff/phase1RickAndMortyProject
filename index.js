@@ -191,12 +191,15 @@ function renderCharacter(char) {
   addToFaves.innerText = `ADD TO FAVORITES, BROH: `;
   const likeBttn = document.createElement("button");
   likeBttn.className = "like-bttn";
-  likeBttn.textContent = "♡";
-  likeBttn.addEventListener("click", function () {
-    likeBttn.textContent = "♥";
+  const bttnImg = document.createElement("img");
+  bttnImg.src = "./images/emptyHeartIcon.png";
+  bttnImg.id = "heart";
+  //likeBttn.append(bttnImg);
+  bttnImg.addEventListener("click", function () {
+    bttnImg.src = "./images/heartIcon.png";
     addtoFavorites(char);
   });
-  addToFaves.append(likeBttn);
+  addToFaves.append(bttnImg);
   characterDiv.append(
     deleteBttn,
     name,
@@ -226,7 +229,8 @@ function renderEpisode(episodes) {
 }
 
 function addtoFavorites(char) {
-  charInCharList = document.getElementById(`${char.id}`);
+  console.log(char);
+  charInCharList = document.getElementById(`${char.name + char.id}`);
   console.log(charInCharList);
   const favesList = document.querySelector("#faves-list");
   console.log(favesList);
