@@ -153,5 +153,5 @@ function renderEpisode(episodes) {
   epiAirDate.innerText = `Air Date: ${episodes.air_date}`;
   epiCode.innerText = `Season and Episode: ${episodes.episode}`;
   epiInfo.append(epiName, epiAirDate, epiCode);
-  console.log(epiInfo);
+  //   console.log(epiInfo);
 }
