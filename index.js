@@ -60,12 +60,48 @@ function renderCharactersList(data) {
   data.results.forEach((char) => {
     const charLi = document.createElement("li");
     charLi.innerText = char.name;
-    charLi.id = char.id;
+    charLi.id = char.name + char.id;
     charLi.className = "clickableChar";
     charList.append(charLi);
     charLi.addEventListener("click", function () {
       return renderCharacter(char);
     });
+  });
+  rick = document.getElementById("Rick Sanchez1");
+  morty = document.getElementById("Morty Smith2");
+  summer = document.getElementById("Summer Smith3");
+  beth = document.getElementById("Beth Smith4");
+  jerry = document.getElementById("Jerry Smith5");
+  rick.addEventListener("click", function () {
+    const audio3 = new Audio(
+      "audio/WUBBA LUBBA DUB DUB - AUDIO FROM JAYUZUMI.COM.mp3"
+    );
+    audio3.volume = 0.008;
+    audio3.play();
+  });
+  morty.addEventListener("click", function () {
+    const audio3 = new Audio("audio/OH GEEZ PT1 - AUDIO FROM JAYUZUMI.COM.mp3");
+    audio3.volume = 0.008;
+    audio3.play();
+  });
+  summer.addEventListener("click", function () {
+    const audio3 = new Audio(
+      "audio/I AM TOTALLY FINE - AUDIO FROM JAYUZUMI.COM.mp3"
+    );
+    audio3.volume = 0.008;
+    audio3.play();
+  });
+  beth.addEventListener("click", function () {
+    const audio3 = new Audio("audio/AM I EVIL - AUDIO FROM JAYUZUMI.COM.mp3");
+    audio3.volume = 0.008;
+    audio3.play();
+  });
+  jerry.addEventListener("click", function () {
+    const audio3 = new Audio(
+      "audio/HAVE YOU EVER TRIED TO RELAX - AUDIO FROM JAYUZUMI.COM.mp3"
+    );
+    audio3.volume = 0.008;
+    audio3.play();
   });
 }
 
