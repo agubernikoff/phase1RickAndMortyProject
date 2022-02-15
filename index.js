@@ -101,6 +101,7 @@ function search() {
 }
 
 function renderCharacter(char) {
+  console.log(char);
   const characterDiv = document.createElement("div");
   characterDiv.className = "characterDiv";
   console.log(characterDiv);
@@ -153,5 +154,5 @@ function renderEpisode(episodes) {
   epiAirDate.innerText = `Air Date: ${episodes.air_date}`;
   epiCode.innerText = `Season and Episode: ${episodes.episode}`;
   epiInfo.append(epiName, epiAirDate, epiCode);
-  //   console.log(epiInfo);
+  console.log(epiInfo);
 }
