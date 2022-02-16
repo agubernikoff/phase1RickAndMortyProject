@@ -52,6 +52,11 @@ div {
   border-radius: 20px;
   border: 3px solid black;
 }
+.clickableChar:hover {
+  font-size: 105%;
+  text-decoration: underline;
+  cursor: pointer;
+}
 #searchWrapper {
   display: block;
   text-align: center;
@@ -98,11 +103,6 @@ div {
   color: turquoise;
   text-align: center;
 }
-.clickableChar:hover {
-  font-size: 105%;
-  text-decoration: underline;
-  cursor: pointer;
-}
 #bigCharactersDiv {
   position: absolute;
   left: 333px;
@@ -118,4 +118,7 @@ div {
   position: relative;
   left: 260px;
   bottom: 18px;
+}
+.epiName {
+  margin: 2px;
 }
