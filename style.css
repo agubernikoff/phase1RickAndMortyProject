@@ -88,9 +88,9 @@ div {
   border-width: 10px;
   border-color: turquoise;
   background-color: black;
-  width: 300px;
+  width: 333px;
   text-align: center;
-  margin: 10px;
+  margin: 5px;
 }
 .characterDiv h1 {
   color: turquoise;
@@ -116,9 +116,16 @@ div {
   display: block;
   text-align: center;
   position: relative;
-  left: 260px;
+  left: 275px;
   bottom: 18px;
 }
 .epiName {
-  margin: 2px;
+  margin-top: 2px;
+  margin-bottom: 1px;
+  text-decoration: underline;
+}
+.epiInfo {
+  list-style: none;
+  text-align: center;
+  padding: 0px;
 }

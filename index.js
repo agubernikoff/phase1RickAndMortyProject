@@ -175,6 +175,7 @@ function renderCharacter(char) {
   const location = document.createElement("h4");
   location.innerText = `Location: ${char.location.name}`;
   const episodes = document.createElement("h4");
+  episodes.innerText = "Appears in:";
   char.episode.forEach((epi) => {
     fetch(`${epi}`)
       .then((resp) => resp.json())
@@ -217,6 +218,7 @@ function renderCharacter(char) {
 function renderEpisode(episodes) {
   console.log(episodes);
   const epiInfo = document.createElement("ul");
+  epiInfo.className = "epiInfo";
   const epiName = document.createElement("h4");
   epiName.className = "epiName";
   const epiAirDate = document.createElement("li");
