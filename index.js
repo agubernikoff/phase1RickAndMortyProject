@@ -175,6 +175,7 @@ function renderCharacter(char) {
   const location = document.createElement("h4");
   location.innerText = `Location: ${char.location.name}`;
   const episodes = document.createElement("h4");
+  episodes.className = "episodes";
   episodes.innerText = "Appears in:";
   char.episode.forEach((epi) => {
     fetch(`${epi}`)
