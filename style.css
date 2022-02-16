@@ -91,6 +91,10 @@ div {
   width: 333px;
   text-align: center;
   margin: 5px;
+  height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+
 }
 .characterDiv h1 {
   color: turquoise;
