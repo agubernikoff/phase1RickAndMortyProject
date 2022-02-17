@@ -72,37 +72,21 @@ function renderCharactersList(data) {
   summer = document.getElementById("Summer Smith3");
   beth = document.getElementById("Beth Smith4");
   jerry = document.getElementById("Jerry Smith5");
-  rick.addEventListener("click", function () {
-    const audio3 = new Audio(
-      "audio/WUBBA LUBBA DUB DUB - AUDIO FROM JAYUZUMI.COM.mp3"
-    );
-    audio3.volume = 0.008;
-    audio3.play();
-  });
-  morty.addEventListener("click", function () {
-    const audio3 = new Audio("audio/OH GEEZ PT1 - AUDIO FROM JAYUZUMI.COM.mp3");
-    audio3.volume = 0.008;
-    audio3.play();
-  });
-  summer.addEventListener("click", function () {
-    const audio3 = new Audio(
-      "audio/I AM TOTALLY FINE - AUDIO FROM JAYUZUMI.COM.mp3"
-    );
-    audio3.volume = 0.008;
-    audio3.play();
-  });
-  beth.addEventListener("click", function () {
-    const audio3 = new Audio("audio/AM I EVIL - AUDIO FROM JAYUZUMI.COM.mp3");
-    audio3.volume = 0.008;
-    audio3.play();
-  });
-  jerry.addEventListener("click", function () {
-    const audio3 = new Audio(
-      "audio/HAVE YOU EVER TRIED TO RELAX - AUDIO FROM JAYUZUMI.COM.mp3"
-    );
-    audio3.volume = 0.008;
-    audio3.play();
-  });
+  function playAudio(name, audioPath) {
+    name.addEventListener("click", function () {
+      const audio3 = new Audio(audioPath);
+      audio3.volume = 0.008;
+      audio3.play();
+    });
+  }
+  playAudio(rick, "audio/WUBBA LUBBA DUB DUB - AUDIO FROM JAYUZUMI.COM.mp3");
+  playAudio(morty, "audio/OH GEEZ PT1 - AUDIO FROM JAYUZUMI.COM.mp3");
+  playAudio(summer, "audio/I AM TOTALLY FINE - AUDIO FROM JAYUZUMI.COM.mp3");
+  playAudio(beth, "audio/AM I EVIL - AUDIO FROM JAYUZUMI.COM.mp3");
+  playAudio(
+    jerry,
+    "audio/HAVE YOU EVER TRIED TO RELAX - AUDIO FROM JAYUZUMI.COM.mp3"
+  );
 }
 
 function renderSearchBar() {
