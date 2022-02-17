@@ -152,10 +152,9 @@ function search() {
 }
 
 function renderCharacter(char) {
-  console.log(char);
   const characterDiv = document.createElement("div");
   characterDiv.className = "characterDiv";
-  console.log(characterDiv);
+  characterDiv.id = `charCard${char.id}`;
   const name = document.createElement("h1");
   name.innerText = char.name;
   const image = document.createElement("img");
@@ -213,11 +212,11 @@ function renderCharacter(char) {
     episodes,
     addToFaves
   );
-  bigCharactersDiv.append(characterDiv);
+  const specificCharCard = document.getElementById(`charCard${char.id}`);
+  if (specificCharCard === null) bigCharactersDiv.append(characterDiv);
 }
 
 function renderEpisode(episodes) {
-  console.log(episodes);
   const epiInfo = document.createElement("ul");
   epiInfo.className = "epiInfo";
   const epiName = document.createElement("h4");
