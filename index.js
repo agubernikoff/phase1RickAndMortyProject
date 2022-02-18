@@ -176,9 +176,15 @@ function renderCharacter(char) {
   const addToFaves = document.createElement("h4");
   addToFaves.innerText = `ADD TO FAVORITES, BROH: `;
   const bttnImg = document.createElement("img");
-  bttnImg.src = "./images/emptyHeartIcon.png";
+  const specificLi = document.getElementById(char.name + char.id);
+  if (specificLi.className === "clickableChar") {
+    bttnImg.src = "./images/emptyHeartIcon.png";
+  } else {
+    bttnImg.src = "./images/heartIcon.png";
+  }
   bttnImg.id = "heart";
   bttnImg.addEventListener("click", function () {
+    specificLi.className = "favorite";
     bttnImg.src = "./images/heartIcon.png";
     addtoFavorites(char);
   });

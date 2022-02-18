@@ -57,6 +57,11 @@ div {
   text-decoration: underline;
   cursor: pointer;
 }
+.favorite:hover {
+  font-size: 105%;
+  text-decoration: underline;
+  cursor: pointer;
+}
 #searchWrapper {
   display: block;
   text-align: center;
