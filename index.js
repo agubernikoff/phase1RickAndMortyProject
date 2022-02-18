@@ -177,6 +177,7 @@ function renderCharacter(char) {
   addToFaves.innerText = `ADD TO FAVORITES, BROH: `;
   const bttnImg = document.createElement("img");
   const specificLi = document.getElementById(char.name + char.id);
+  console.log(specificLi);
   if (specificLi.className === "clickableChar") {
     bttnImg.src = "./images/emptyHeartIcon.png";
   } else {
@@ -184,9 +185,15 @@ function renderCharacter(char) {
   }
   bttnImg.id = "heart";
   bttnImg.addEventListener("click", function () {
-    specificLi.className = "favorite";
-    bttnImg.src = "./images/heartIcon.png";
-    addtoFavorites(char);
+    if (specificLi.className === "clickableChar") {
+      bttnImg.src = "./images/heartIcon.png";
+      specificLi.className = "favorite";
+    } else if (specificLi.className === "favorite") {
+      bttnImg.src = "./images/emptyHeartIcon.png";
+      specificLi.className = "clickableChar";
+    }
+
+    addtoFavorites(char, specificLi);
   });
   addToFaves.append(bttnImg);
   characterDiv.append(
@@ -220,9 +227,15 @@ function renderEpisode(episodes) {
   return epiInfo;
 }
 
-function addtoFavorites(char) {
-  charInCharList = document.getElementById(`${char.name + char.id}`);
+function addtoFavorites(char, specificLi) {
+  // charInCharList = document.getElementById(`${char.name + char.id}`);
+  console.log(specificLi);
   const favesList = document.querySelector("#faves-list");
-  charInCharList.remove();
-  favesList.append(charInCharList);
+  const charList = document.querySelector("#char-list");
+  specificLi.remove();
+  if (specificLi.className === "favorite") {
+    favesList.append(specificLi);
+  } else {
+    charList.prepend(specificLi);
+  }
 }
