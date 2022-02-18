@@ -90,8 +90,6 @@ function renderCharactersList(data) {
 }
 
 function renderSearchBar() {
-  //const searchWrapper = document.createElement("div");
-  //searchWrapper.id = "searchWrapper";
   const searchHeader = document.createElement("h2");
   searchHeader.innerText = "Search for a character:";
   searchHeader.id = "searchHead";
@@ -105,7 +103,6 @@ function renderSearchBar() {
   const searchBttn = document.createElement("button");
   searchBttn.innerText = "Find that character, broh";
   searchBttn.type = "submit";
-  //body.append(searchWrapper);
   searchWrapper.append(searchHeader, searchForm);
   searchForm.append(searchBar, searchBttn);
 }
@@ -115,9 +112,6 @@ function populateCharactersArray(data) {
 }
 
 function search() {
-  // const bigCharactersDiv = document.createElement("div");
-  //bigCharactersDiv.id = "bigCharactersDiv";
-  //charListDiv.append(bigCharactersDiv);
   const form = document.querySelector("#searchBarForm");
   const input = document.querySelector("#searchBar");
   form.addEventListener("submit", (e) => {
@@ -177,7 +171,6 @@ function renderCharacter(char) {
   addToFaves.innerText = `ADD TO FAVORITES, BROH: `;
   const bttnImg = document.createElement("img");
   const specificLi = document.getElementById(char.name + char.id);
-  console.log(specificLi);
   if (specificLi.className === "clickableChar") {
     bttnImg.src = "./images/emptyHeartIcon.png";
   } else {
@@ -228,8 +221,6 @@ function renderEpisode(episodes) {
 }
 
 function addtoFavorites(char, specificLi) {
-  // charInCharList = document.getElementById(`${char.name + char.id}`);
-  console.log(specificLi);
   const favesList = document.querySelector("#faves-list");
   const charList = document.querySelector("#char-list");
   specificLi.remove();

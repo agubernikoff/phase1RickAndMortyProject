@@ -52,8 +52,8 @@ div {
   transition: 500ms;
 }
 #char-list-div {
-  /* height: 100vh; */
-  top: 0px;
+  position: sticky;
+  top: 10px;
   width: 332px;
 }
 #char-list,
@@ -99,7 +99,7 @@ div {
 }
 .characterDiv {
   display: block;
-  float: left;
+  /* float: left; */
   border-style: outset;
   border-width: 10px;
   border-color: turquoise;
@@ -127,6 +127,8 @@ div {
 }
 #bigCharactersDiv {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
   left: 333px;
   bottom: 570px;
   width: 75%;
