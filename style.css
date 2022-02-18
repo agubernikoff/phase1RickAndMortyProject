@@ -3,13 +3,14 @@
 }
 #body2 {
   background-image: url("https://i.pinimg.com/originals/e2/fb/0b/e2fb0b2ac9b7e82275eacc8c2ee9c846.jpg");
+  /* position: relative; */
 }
 #mainHeader {
   color: turquoise;
   text-align: center;
 }
 #imageHeader {
-  width: 50%;
+  width: 35%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -19,48 +20,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-div {
-  transition: 500ms;
-}
-#char-list,
-#faves-list {
-  color: turquoise;
-  background-color: black;
-  height: 200px;
-  width: 18%;
-  overflow: hidden;
-  overflow-y: scroll;
-}
-#char-list-div h3 {
-  color: black;
-  background-color: turquoise;
-  width: 22%;
-  height: auto;
-  text-align: center;
-}
-*::-webkit-scrollbar {
-  width: 12px;
-}
-
-*::-webkit-scrollbar-track {
-  background: turquoise;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: rgb(133, 223, 31);
-  border-radius: 20px;
-  border: 3px solid black;
-}
-.clickableChar:hover {
-  font-size: 105%;
-  text-decoration: underline;
-  cursor: pointer;
-}
-.favorite:hover {
-  font-size: 105%;
-  text-decoration: underline;
-  cursor: pointer;
 }
 #searchWrapper {
   display: block;
@@ -89,6 +48,55 @@ div {
   margin: 15px;
   width: 200px;
 }
+div {
+  transition: 500ms;
+}
+#char-list-div {
+  /* height: 100vh; */
+  top: 0px;
+  width: 332px;
+}
+#char-list,
+#faves-list {
+  color: turquoise;
+  background-color: black;
+  height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+  /* position: sticky;
+  top: 0px; */
+}
+#char-list-div h3 {
+  color: black;
+  background-color: turquoise;
+  height: auto;
+  text-align: center;
+  /* position: sticky;
+  top: 0px; */
+}
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: turquoise;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(133, 223, 31);
+  border-radius: 20px;
+  border: 3px solid black;
+}
+.clickableChar:hover {
+  font-size: 105%;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.favorite:hover {
+  font-size: 105%;
+  text-decoration: underline;
+  cursor: pointer;
+}
 .characterDiv {
   display: block;
   float: left;
@@ -97,6 +105,7 @@ div {
   border-color: turquoise;
   background-color: black;
   width: 333px;
+  height: 772px;
   text-align: center;
   margin: 5px;
 }
@@ -117,8 +126,11 @@ div {
   text-align: center;
 }
 #bigCharactersDiv {
-  position: absolute;
+  position: relative;
   left: 333px;
+  bottom: 570px;
+  width: 75%;
+  /* height: 100vh; */
 }
 .delete-bttn {
   position: relative;

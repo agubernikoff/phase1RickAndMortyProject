@@ -115,9 +115,9 @@ function populateCharactersArray(data) {
 }
 
 function search() {
-  const bigCharactersDiv = document.createElement("div");
-  bigCharactersDiv.id = "bigCharactersDiv";
-  charListDiv.append(bigCharactersDiv);
+  // const bigCharactersDiv = document.createElement("div");
+  //bigCharactersDiv.id = "bigCharactersDiv";
+  //charListDiv.append(bigCharactersDiv);
   const form = document.querySelector("#searchBarForm");
   const input = document.querySelector("#searchBar");
   form.addEventListener("submit", (e) => {
