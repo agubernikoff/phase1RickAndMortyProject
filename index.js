@@ -151,9 +151,11 @@ function renderCharacter(char) {
   origin.innerText = `Origin: ${char.origin.name}`;
   const location = document.createElement("h4");
   location.innerText = `Location: ${char.location.name}`;
+  const episodesHeader = document.createElement("h4");
+  episodesHeader.innerText = "Appears in:";
+  episodesHeader.className = "epiHead";
   const episodes = document.createElement("h4");
   episodes.className = "episodes";
-  episodes.innerText = "Appears in:";
   char.episode.forEach((epi) => {
     fetch(`${epi}`)
       .then((resp) => resp.json())
@@ -199,6 +201,7 @@ function renderCharacter(char) {
     gender,
     origin,
     location,
+    episodesHeader,
     episodes,
     addToFaves
   );

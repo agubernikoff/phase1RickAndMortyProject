@@ -113,6 +113,7 @@ div {
   height: 108px;
   overflow: hidden;
   overflow-y: scroll;
+  margin-top: 0px;
 }
 .characterDiv h1 {
   color: turquoise;
@@ -155,4 +156,8 @@ div {
   list-style: none;
   text-align: center;
   padding: 0px;
+  margin-top: 0px;
+}
+.epiHead {
+  margin-bottom: 5px;
 }
