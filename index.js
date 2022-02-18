@@ -5,7 +5,7 @@ const portalImage = document.querySelector("#portal-image");
 const charListDiv = document.querySelector("#char-list-div");
 const body = document.querySelector("body");
 const charactersArray = [];
-
+const searchWrapper = document.querySelector("#searchWrapper");
 portalImageDiv.addEventListener("click", function () {
   const audio = new Audio("./audio/LETS GO - AUDIO FROM JAYUZUMI.COM.mp3");
   audio.play();
@@ -90,8 +90,8 @@ function renderCharactersList(data) {
 }
 
 function renderSearchBar() {
-  const searchWrapper = document.createElement("div");
-  searchWrapper.id = "searchWrapper";
+  //const searchWrapper = document.createElement("div");
+  //searchWrapper.id = "searchWrapper";
   const searchHeader = document.createElement("h2");
   searchHeader.innerText = "Search for a character:";
   searchHeader.id = "searchHead";
@@ -105,7 +105,7 @@ function renderSearchBar() {
   const searchBttn = document.createElement("button");
   searchBttn.innerText = "Find that character, broh";
   searchBttn.type = "submit";
-  charListDiv.prepend(searchWrapper);
+  //body.append(searchWrapper);
   searchWrapper.append(searchHeader, searchForm);
   searchForm.append(searchBar, searchBttn);
 }

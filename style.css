@@ -65,6 +65,7 @@ div {
 #searchWrapper {
   display: block;
   text-align: center;
+  background-color: turquoise;
 }
 #searchHead {
   text-align: center;
