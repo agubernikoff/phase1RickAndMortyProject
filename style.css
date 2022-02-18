@@ -110,7 +110,7 @@ div {
   margin: 5px;
 }
 .episodes {
-  height: 108px;
+  height: 76.3px;
   overflow: hidden;
   overflow-y: scroll;
   margin-top: 0px;
@@ -153,6 +153,8 @@ div {
   text-decoration: underline;
 }
 .epiInfo {
+  position: relative;
+  left: 11px;
   list-style: none;
   text-align: center;
   padding: 0px;
